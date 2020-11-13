@@ -1,0 +1,88 @@
+** React **
+# https://github.com/bradtraversy/proshop_mern
+# Cuando creamos un proyecto nuevo vamos a eliminar lo siguiente: dentro de src: App.css, App.test.js, logo.svg, setupTests.js
+# rafce -> react functional component
+import React from 'react'
+const Header = () => {
+    return (
+        <div></div>
+    )
+}
+export default Header
+
+# npm i react-bootstrap -> instalar bootstrap. Funciona con componentes. Por ejemplo un button es un componente. -> dentro del frontEnd
+# https://cdnjs.com -> para descargar librerías
+# defaultProps -> valor por defecto del prop
+# npm i react-router-dom react-router-bootstrap -> react-router-bootstrap para trabajar con boostrap y router -> dentro del frontend
+# npm init -> a la raíz del proyecto
+# npm express -> a la raíz del proyecto
+# npm i axios -> dentro del frontend
+# Dentro del package.json del frontEnd añadimos "proxy": "http://127.0.0.1:5000" para que haga las llamadas con axios al backend en vez del frontEnd.
+# npm i -D nodemon concurrently -> a la raíz . Concurrently sirve para llamar por ejemplo el backend y el frontend a la vez con una sola linea.
+# Dentro del package.json de la raíz del proyecto añadimos:
+# "start": "node backend/server" -> npm start
+# "server": "nodemon backend/server" -> npm run server
+# "client": "npm start --prefix frontend" -> esto para poder iniciar en la raíz el proyecto del frontend. -> npm run client
+# "dev": "concurrently \"npm run server\" \"npm run client\"" -> para llamar a la vez el frontend y el backend -> npm run dev
+# npm i dotenv -> variables de entorno
+# Utilizar una versión mínimo 14.6.0 de node.js para convertir en el server.js las llamadas const express = require('express') por import express from 'express'. En el package.json de la raíz añadimos la siguiente línea: "type": "module" . Todo para trabajar con ES6 en el backend (nodejs)
+# /cart/:id? -> si añadimos ? en un parámetro del route estamos diciendo que es opcional.
+
+** mongodb **
+# npm i mongoose -> en la raíz
+
+** Hash password **
+# npm i bcryptjs -> en la raíz
+
+** Subir datos a mongoose **
+# node backend/seeder -> para subir datos si añadimos el -d elimina todos los datos. En el package.json añadimos lo siguiente "data:import": "node backend/seeder", "data:destroy": "node backend/seeder -d"
+# npm run data:import or data:destroy
+
+# npm i express-async-handler -> Un simple middleware para manejar excepciones async en los routes. -> En la raíz
+
+** Redux **
+# npm i redux react-redux redux-thunk redux-devtools-extension -> en el frontEnd
+# Crear constante, reducer, acción y disparar con el componente.
+
+# app.use(express.json()) -> añadimos en server.js para acceptar JSON en el body
+
+** JSON token **
+# Proteger rutas
+# npm install jsonwebtoken -> en la raíz
+
+** Paypal **
+# npm i react-paypal-button-v2 -> añadir un buton de paypal -> La instalación se realiza en el frontEnd
+
+** Upload **
+# npm i multer -> Es un middleware para manejar la subida de archivos. Instalación en el frontEnd.
+# app.use('/uploads', express.static()) -> accesible por defecto desde node.js. Lo declara como static.
+# __dirname -> devuelve la ruta absoluta
+
+** Info de las peticiones HTTP que realizamos **
+# npm i morgan -> en la raíz
+
+** Search node.js **
+# $regex -> para cercar la palabra iph y que encuentre iphone.
+# $options: 'i' -> Sensible a mayúsculas o minúsculas.
+
+** Titles & Meta **
+# No es muy optimo para el SEO porque se crea después de cargar la página web. npm i react-helmet -> En el frontEnd.
+
+** Publicar **
+# npm run build -> en el frontend
+# npm start
+# localhost:5000
+
+** Heroku **
+# Cuando lo subimos a heroku no hace falta tener el build. Nosotros le decimos que lo haga en el package.json: "heroku-postbuild"
+# heroku create _nombre_app_ -> en la raíz
+# En la raíz -> creemos un archivo llamado Procfile -> para indicar a heroke que hacer para abrir la app.
+# git init -> en la raíz
+# git add . -> en la raíz
+# git commit -m "Prepare for dasda" -> en la raíz
+# herki git:remote -a _nombre_app_
+# git push heroku master
+# En heroku tenemos que añadir los valores que teniamos en .env . En settings / Config Vars
+
+
+
